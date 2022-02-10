@@ -100,7 +100,7 @@ function App() {
           <h1 className='text-3xl font-bold tracking-wider mb-3'>Our Menu</h1>
           <div className='w-[5rem] h-1 bg-[#c59d5f]'></div>
         </div>
-        <div className='mb-16 flex justify-center items-center text-[#c59d5f]'>
+        <div className='mb-16 flex justify-center flex-wrap items-center text-[#c59d5f]'>
           {categoryes.map((cat) => (
             <div key={cat.id}>
               <button
