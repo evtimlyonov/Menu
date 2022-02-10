@@ -75,12 +75,7 @@ const data = [
   },
 ];
 
-const categoryes = [
-  { id: 11, name: 'all' },
-  { id: 22, name: 'breakfast' },
-  { id: 33, name: 'lunch' },
-  { id: 44, name: 'shakes' },
-];
+const categories = ['all', ...new Set(data.map((el) => el.category))];
 
 function App() {
   const [manuData, setMenuData] = useState(data);
@@ -101,13 +96,13 @@ function App() {
           <div className='w-[5rem] h-1 bg-[#c59d5f]'></div>
         </div>
         <div className='mb-16 flex justify-center flex-wrap items-center text-[#c59d5f]'>
-          {categoryes.map((cat) => (
-            <div key={cat.id}>
+          {categories.map((cat, inx) => (
+            <div key={inx}>
               <button
                 type='button'
                 className='transition-all	mx-[0.5rem] py-[0.375rem] px-[0.75rem] hover:bg-[#c59d5f] hover:rounded hover:text-white duration-500 capitalize'
-                onClick={filter.bind(null, cat.name)}>
-                {cat.name}
+                onClick={filter.bind(null, cat)}>
+                {cat}
               </button>
             </div>
           ))}
